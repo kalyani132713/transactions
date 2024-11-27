@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .button-container button{
+            height: 60px;
+            width: 130px;
+        }
+      </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Credit Card Details</h1>
+        <p><strong>Card Holder:</strong> Barri.Klayani</p>
+        <p><strong>Card Number:</strong> **** **** **** 2044</p>
+        <p><strong>Expiry Date:</strong> 09/29</p>
+        <p><strong>Bank Name:</strong> HDFC Bank</p>
+      
+    <div class="credit-input">
+            <label for="creditAmount">Enter Credit Amount: </label>
+            <input type="number" id="creditAmount" placeholder="Enter credit amount" />
+            <input type="submit" name="" id="creSub">
+    </div>
+ <br>
+ <br>
+        
+        <div class="button-container">
+            <a href="index.html">
+                <button class="button">Back to Home Page</button>
+            </a>
+            <button onclick="verifyPinAndNavigate('debit-card-details.html')" class="button">Debit Card Details</button>
+        </div>
+    </div>
+
+    <script>
+        
+        const correctPin = '1327'; 
+     
+        function verifyPinAndNavigate(targetPage) {           
+            const enteredPin = prompt("Please enter your 4-digit PIN:")           
+            if (enteredPin === correctPin) {    
+                window.location.href = targetPage;
+            } else {
+                alert("Wrong PIN. Please try again.");
+            }
+        }
+        let accBls = 5000
+        document.getElementById('creSub').addEventListener('click' , function(){
+            let creval = document.getElementById('creditAmount').value;
+            let creditval= parseInt(creval)
+            const creRes = accBls + creditval
+            alert(creRes)
+            localStorage.setItem('currentBls' , creRes)
+        })
+    </script>
+</body>
+</html>

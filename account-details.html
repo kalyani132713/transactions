@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .button-container button{
+            height: 80px;
+            width: 130px;
+        }
+      </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Account Details</h1>
+        <p><strong>Account Holder:</strong> Barri.Kalyani</p>
+        <p><strong>Account Number:</strong> 7396006673</p>
+        <p><strong>Bank Name:</strong> HDFC Bank</p>
+        <p><strong>Account Type:</strong> Savings Account</p>
+        <p><strong>Current Balance:</strong><span id="usrBls"></span></p>
+
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'" class="button">Back <br> to Home Page</button>
+            <button onclick="verifyPIN('credit-card-details.html')" class="button">Go to Credit Card Details</button>
+            <button onclick="verifyPIN('debit-card-details.html')" class="button">Go to Debit Card Details</button>
+        </div>
+    </div>
+
+    <script>
+       
+        function verifyPIN(redirectPage) {
+            let enteredPin = prompt("Please enter your 4-digit PIN:");
+            if (enteredPin === "1327" && enteredPin.length === 4) {
+                window.location.href = redirectPage;
+            } else {
+                alert("Incorrect PIN. Please try again.");
+            }
+        }
+        document.getElementById('usrBls').innerHTML = localStorage.getItem('currentBls')
+
+    </script>
+</body>
+</html>

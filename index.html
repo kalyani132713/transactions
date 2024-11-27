@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="dashboard">
+        <h1>Dashboard for Transaction</h1>
+        <div class="categories">
+          <div class="card">
+            <a href="account-details.html">
+                <button onclick="hack()" > Account Details</button></a>
+               <script>
+               function hack(){
+                let x= +prompt("Enter the pin")
+                const pin=1327
+                const valid = x === pin
+                if(valid){
+                alert("Acces Granted");
+                window.location.href="details.html"
+            }
+                else{
+                    alert("plese enter valid pin");
+            }
+            }
+        </script> 
+            </a>
+          </div>
+          <div class="card">
+            <a href="debit-card-details.html">
+                <button onclick="hack()" > Debit Card</button></a>
+                <script>
+                function hack(){
+                 let x= +prompt("Enter the pin")
+                 const pin=1327
+                 const valid = x === pin
+                 if(valid){
+                 alert("Acces Granted");
+                 window.location.href="details.html"
+             }
+                 else{
+                     alert("plese enter valid pin");
+             }
+             }
+         </script>
+            </a>
+          </div>
+          <div class="card">
+            <a href="credit-card-details.html">
+                <button onclick="hack()" > credit card</button></a>
+                <script>
+                function hack(){
+                 let x= +prompt("Enter the pin")
+                 const pin=1327
+                 const valid = x === pin
+                 if(valid){
+                 alert("Acces Granted");
+                 window.location.href="details.html"
+             }
+                 else{
+                     alert("plese enter valid pin");
+             }
+             }
+         </script>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

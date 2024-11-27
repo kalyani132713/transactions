@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit Card Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .button-container button{
+            height: 80px;
+            width: 130px;
+        }
+      </style>
+</head>
+<body>
+
+    <a href="index.html"></a>
+    <div class="dashboard">
+        <h1>Debit Card Details</h1>
+        <p><strong>Card Holder:</strong> Barri.Kalyani</p>
+        <p><strong>Card Number:</strong> **** **** **** 2044</p>
+        <p><strong>Expiry Date:</strong> 09/29</p>
+        <p><strong>Bank Name:</strong> HDFC Bank</p>
+
+        <div class="debit-input">
+            <label for="dbtAmt">Enter Debit Amount: </label>
+            <input type="number" id="dbtAmt" placeholder="Enter debit amount">
+            <input type="submit" name="" id="debSub">
+        </div>
+<br>
+<br>
+
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'" class="button">Back <br>to Home Page</button>
+            <button onclick="verifyPIN('credit-card-details.html')" class="button">Go to Credit Card Details</button>
+            <button onclick="updateBalanceFromDebit('account-details.html')" class="button">check Account Balance</button>
+        </div>
+    </div>
+
+    <script>
+       
+        function verifyPIN(redirectPage) {
+            let enteredPin = prompt("Please enter your 4-digit PIN:");
+            if (enteredPin === "1327" && enteredPin.length === 4) {
+                window.location.href = redirectPage;
+            } else {
+                alert("Incorrect PIN. Please try again.");
+            }
+        }
+        function updateBalanceFromDebit(redirectPage) {
+            let enteredPin = prompt("Please enter your 4-digit PIN:");
+            if (enteredPin === "1327" && enteredPin.length === 4) {
+                window.location.href = redirectPage;
+            } else {
+                alert("Incorrect PIN. Please try again.");
+            }
+        }
+
+        let accBls = localStorage.getItem('currentBls')
+        document.getElementById('debSub').addEventListener('click' , function(){
+            let xValue = parseInt(accBls);
+            let dbtval = document.getElementById('dbtAmt').value;
+
+            const dbtRes = xValue - dbtval
+            alert(dbtRes)
+            localStorage.setItem('currentBls' , dbtRes)
+        })
+    </script>
+</body>
+</html>
+
